@@ -11,15 +11,19 @@ Aim :
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 How to use : 
-1. intall opencv on IDE or computer      (https://www.youtube.com/watch?v=T5BVLQG3Pxk)
-2. manually change the name of the image you want to image process by opening the script
-3. run the program in terminal      (https://www.youtube.com/watch?v=enfCPH_2k6A)
+1. intall opencv on IDE or computer
+2. install arduino IDE on computer
+3. plug arduino uno into computer and upload circlearound.ino on it (change the pinmodes and serial value if needed)
+4. connect camera and MIC FI dermatoscope to computer for the main.py and arudino_try_pygame.py program to run (make sure it shows up as a camera option in computer settings)
+5. change the value until desired camera is being used
+6. run app.py until a set of images captured in desired folder
+7. change the name of "picturename.png" in prototype.py to name of picture wanted for image processing and run program
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 Description : 
 
-image processing software that uses opencv to detect and count the number of hairs in an image
+image processing software that uses opencv and arduino to move dermatoscope and capture images to detect and count the number of hairs in an image
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
