@@ -1,24 +1,3 @@
-'''
-import cv2
-import numpy as np
-
-# Read the image
-image = cv2.imread('storage/hairpic2.png')
-
-# Convert the image to grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply edge detection
-edges = cv2.Canny(gray, 50, 150, apertureSize=3)
-
-# Use Hough Line Transform
-lines = cv2.HoughLines(edges, 1, np.pi / 180, threshold=100)
-
-# Check the number of lines detected
-num_lines = len(lines)
-print(f"Number of lines detected: {num_lines}")
-'''
-
 import cv2
 import numpy as np
 import statistics
@@ -38,7 +17,7 @@ value = 1
 
 def imageprocess(t, min, max):
     global line_count
-    image = cv2.imread('storage/hairpic6.png')
+    image = cv2.imread('picturename.png') #change picture name here
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     edges = cv2.Canny(gray, 50, 150)
     #lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=50, minLineLength=125, maxLineGap=20)
@@ -52,8 +31,6 @@ def imageprocess(t, min, max):
             cv2.line(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
             line_count += 1
 
-    #cv2.imshow('Detected Lines', image)
-    #cv2.waitKey(0)
     cv2.destroyAllWindows()
 
     print(f"Number of lines drawn: {line_count}")
@@ -163,28 +140,6 @@ print("fixed list : " + str(listfixed))
 #1. detect line endpoint caue deteching lines always have errors especially when overlapping
 #2. circle them to see if right or not
 #3. count the number of circles ?
-
-'''
-#successful sstage prototype
-import cv2
-import numpy as np
-
-image = cv2.imread('storage/hairpic6.png')
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-edges = cv2.Canny(gray, 50, 150)
-lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=50, minLineLength=125, maxLineGap=20)
-
-line_count = 0
-
-if lines is not None:
-    for line in lines:
-        x1, y1, x2, y2 = line[0]
-        cv2.line(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
-        line_count += 1
-
-cv2.imshow('Detected Lines', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
 
 print(f"Number of lines drawn: {line_count}")'''
 
